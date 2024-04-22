@@ -4,7 +4,7 @@ const checkVenueIsValid = (venueId: string) => {
     const venues = venueStore().venues
     console.log('checkVenueIsValid', venues, venueId)
    // Assuming you have a getter named 'getVenues' in your venues store
-
+    console.log('checkVenueIsValid', venues.includes(venueId))
     return venues.includes(venueId)
 
 }

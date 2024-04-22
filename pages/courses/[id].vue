@@ -2,6 +2,8 @@
     <div>
         <h1>Course Details</h1>
         <p>Course ID: {{ courseId }}</p>
+        <!-- Meta? -->
+        <Title>{{ courseId }}</Title>
     </div>
 </template>
 
@@ -23,15 +25,20 @@ console.log('store', store)
     const route = useRoute()
     const courseId = route.params.id
 
+
 definePageMeta
 ({
-    // validate: async (route) => {
-    //     // return store?.includes(route.params.id)
-    //     return false
-    // },
+    validate: async (route) => {
+            // return typeof route.params.id === 'string' && /^\d+$/.test(route.params.id)
+            return true;
+    },
     layout: 'default',
   middleware: ['auth', 'valid-venue']
 });
+
+useHead({
+  title: courseId || 'Venue',
+})
 
 
 

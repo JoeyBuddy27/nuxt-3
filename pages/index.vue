@@ -11,17 +11,15 @@
 </template>
 
 
-<script>
+<script setup type="ts">
 import {ref} from 'vue';
 
 const randomTitle = ref('Title');
 
-export default {
-  setup() {
-    return {
-      randomTitle
-    }
-  }
-}
+useHead({
+  title: 'Home',
+});
+
+
 
 </script>
