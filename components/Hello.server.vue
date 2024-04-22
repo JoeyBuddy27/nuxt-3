@@ -11,9 +11,9 @@
 
 <script setup lang="ts">
 import moment from 'moment';
-import {ref} from 'vue';
+import {Ref, ref} from 'vue';
 
-const currentDate = ref(moment().format('MMMM Do YYYY, h:mm:ss a'));
+const currentDate = ref<string>(moment().format('MMMM Do YYYY, h:mm:ss a'));
 
 const fetchCurrentDate = () => {
     currentDate.value = moment().format('MMMM Do YYYY, h:mm:ss a');
